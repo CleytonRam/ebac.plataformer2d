@@ -18,8 +18,15 @@ public class Player : MonoBehaviour
     public float animationDuration = .3f;
     public Ease ease = Ease.OutBack;
 
-
+    [Header("Animation player")]
+    public string boolRun = "Run";
+    public Animator animator;
+    public float playerSwipeDuration = .1f;
+    
     private float _currentSpeed;
+    private bool _isRunning = false;
+
+
 
     public void Update()  {
 
@@ -32,21 +39,38 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftControl))      {
             _currentSpeed = speedRun;
+            animator.speed = 2;
         }
         else       {
             _currentSpeed = speed;
+            animator.speed = 1;
         }
+
+
         if (Input.GetKey(KeyCode.LeftArrow))       {
 
             myRigidbody.velocity = new Vector2(-speed, myRigidbody.velocity.y);
-
+            if (myRigidbody.transform.localScale.x != -1)            {
+                myRigidbody.transform.DOScaleX(-1, playerSwipeDuration);
+            }
+                animator.SetBool(boolRun, true);
         }
         else if (Input.GetKey(KeyCode.RightArrow))      {
 
             myRigidbody.velocity = new Vector2(speed, myRigidbody.velocity.y);
+            if (myRigidbody.transform.localScale.x != 1)
+            {
+                myRigidbody.transform.DOScaleX(1, playerSwipeDuration);
+            }
+            animator.SetBool(boolRun, true);
 
         }
 
+        else      {
+            animator.SetBool(boolRun, false);
+        }
+
+       
         if (myRigidbody.velocity.x > 0)        {
 
             myRigidbody.velocity += friction;
