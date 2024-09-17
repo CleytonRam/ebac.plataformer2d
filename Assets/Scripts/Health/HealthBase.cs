@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthBase : MonoBehaviour
-{
+public class HealthBase : MonoBehaviour {
     public int startlife = 10;
 
     public bool destroyOnKill = false;
@@ -13,36 +12,39 @@ public class HealthBase : MonoBehaviour
     private int _currentLife;
     private bool _isDead = false;
 
-    private void Awake()
-    {
+    public FlashColor flashColor;
+
+    private void Awake() {
         Init();
+        if(flashColor == null) {
+            flashColor = GetComponent<FlashColor>();
+        }
     }
 
-    private void Init()
-    {
+    private void Init() {
         _isDead = false;
         _currentLife = startlife;
     }
 
-    public void Damage(int damage)
-    {
+    public void Damage(int damage) {
         if (_isDead) return;
 
         _currentLife -= damage;
 
-        if (_currentLife <= 0)
-        {
+        if (_currentLife <= 0) {
             Kill();
+        }
+
+        if (flashColor != null) {
+            flashColor.Flash();
         }
     }
 
-    private void Kill()
-    {
+    private void Kill() {
         
         _isDead = true;
 
-        if (destroyOnKill)
-        {
+        if (destroyOnKill) {
             Destroy(gameObject,delayToKill);
         }
 
