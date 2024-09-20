@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemCollecatbleCoin : ItemCollectableBase
-{
-    protected override void OnCollect()
-    {
+public class ItemCollecatbleCoin : ItemCollectableBase {
+    protected override void OnCollect() {
         base.OnCollect();
         ItemManager.Instance.AddCoins();
     }

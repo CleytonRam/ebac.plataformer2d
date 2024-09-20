@@ -432,6 +432,8 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 394954292}
   triggerAttack: Attack
+  triggerDeath: Death
+  timeToDestroy: 1
   healthBase: {fileID: 138827874}
 --- !u!61 &138827871
 BoxCollider2D:
@@ -514,7 +516,7 @@ MonoBehaviour:
   - {fileID: 547684051}
   - {fileID: 775519802}
   - {fileID: 980825820}
-  color: {r: 1, g: 0, b: 0, a: 1}
+  color: {r: 0.9245283, g: 0.53640085, b: 0.6202962, a: 1}
   duration: 0.3
 --- !u!114 &138827874
 MonoBehaviour:
@@ -529,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startlife: 10
-  destroyOnKill: 1
+  destroyOnKill: 0
   delayToKill: 0
   flashColor: {fileID: 0}
 --- !u!50 &138827875
@@ -706,7 +708,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5000455042689278068, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
       insertIndex: -1
       addedObject: {fileID: 285074870}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8835229685202505509, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1242419501}
   m_SourcePrefab: {fileID: 100100000, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
 --- !u!1 &274865027
 GameObject:
@@ -2389,6 +2394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 744155653}
+  healthBase: {fileID: 744155658}
   friction: {x: -0.3, y: 0}
   speed: 20
   speedRun: 60
@@ -2398,6 +2404,7 @@ MonoBehaviour:
   animationDuration: 0.3
   ease: 27
   boolRun: Run
+  triggerDeath: Death
   animator: {fileID: 1231580181}
   playerSwipeDuration: 0.1
 --- !u!114 &744155658
@@ -2413,7 +2420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startlife: 10
-  destroyOnKill: 1
+  destroyOnKill: 0
   delayToKill: 1
   flashColor: {fileID: 744155660}
 --- !u!210 &744155659
@@ -3697,6 +3704,8 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   triggerAttack: Attack
+  triggerDeath: Death
+  timeToDestroy: 1
   healthBase: {fileID: 0}
 --- !u!50 &1053938099
 Rigidbody2D:
@@ -4244,6 +4253,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8007466312498025151, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
   m_PrefabInstance: {fileID: 268228641}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1242419500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8835229685202505509, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 268228641}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1242419501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242419500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce8cbe37bc2f034ca5b759b2de7a782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 744155657}
 --- !u!212 &1244072791 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7274142433465299202, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
@@ -5107,6 +5134,8 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   triggerAttack: Attack
+  triggerDeath: Death
+  timeToDestroy: 1
   healthBase: {fileID: 0}
 --- !u!210 &1555412731
 SortingGroup:
