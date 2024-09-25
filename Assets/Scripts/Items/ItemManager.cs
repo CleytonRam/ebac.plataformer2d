@@ -10,35 +10,27 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 public class ItemManager : Singleton <ItemManager> {
 
 
-    
   
-    public int coins;
+    public SOInt coins;
    
-
-
-
-
     private void Start() {
         Reset();
 
     }
 
-  
-
-
     private void Reset()  {
-        coins = 0;
+        coins.value = 0;
         UpdateUI();
     }
 
     public void AddCoins(int amount = 1) {
-        coins += amount;
+        coins.value += amount;
+        UpdateUI();
     }
 
-    private void UpdateUI()
-    {
+    private void UpdateUI() {
        //coinsText.text = coins.ToString();
 
-        UIInGameManager.Instance.UpdateTextCoins(coins.ToString());
+        //UIInGameManager.Instance.UpdateTextCoins(coins.value.ToString());
     }
 }
