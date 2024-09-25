@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   compareTag: Player
+  coins: 0
 --- !u!58 &2722353437118297953
 CircleCollider2D:
   m_ObjectHideFlags: 0

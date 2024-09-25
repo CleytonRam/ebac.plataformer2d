@@ -20,6 +20,7 @@ public class GameManager : Singleton<GameManager>
     public float delay = .05f;
     public Ease ease = Ease.OutBack;
 
+    
 
     private GameObject _currentplayer;
 
