@@ -16,9 +16,14 @@ public class Player : MonoBehaviour
     public float forceJump = 2;
 
     [Header("Animation Setup")]
-    public float jumpScaleY = 1.5f;
-    public float jumpScaleX = 0.7f;
-    public float animationDuration = .3f;
+    // public float jumpScaleY = 1.5f;
+   // public float jumpScaleX = 0.7f;
+    // public float animationDuration = .3f;
+
+    public SOFloat soJumpScaleY;
+    public SOFloat soJumpScaleX;
+    public SOFloat soAnimationDuration;
+
     public Ease ease = Ease.OutBack;
 
     [Header("Animation player")]
@@ -112,8 +117,8 @@ public class Player : MonoBehaviour
 
     private void HanldeScaleJump()    {
 
-        myRigidbody.transform.DOScaleY(jumpScaleY, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
-        myRigidbody.transform.DOScaleX(jumpScaleX, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
+        myRigidbody.transform.DOScaleY(soJumpScaleY.value, soAnimationDuration.value).SetLoops(2, LoopType.Yoyo).SetEase(ease);
+        myRigidbody.transform.DOScaleX(soJumpScaleX.value, soAnimationDuration.value).SetLoops(2, LoopType.Yoyo).SetEase(ease);
 
     }
 
