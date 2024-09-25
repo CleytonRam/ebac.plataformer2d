@@ -13,27 +13,32 @@ public class ItemManager : Singleton <ItemManager> {
     
   
     public int coins;
-    public Text coinText;
+   
 
 
 
 
     private void Start() {
         Reset();
+
     }
 
-    private void Update()
-    {
-        coinText.text = coins.ToString();
-    }
+  
 
 
     private void Reset()  {
         coins = 0;
+        UpdateUI();
     }
 
     public void AddCoins(int amount = 1) {
         coins += amount;
     }
 
+    private void UpdateUI()
+    {
+       //coinsText.text = coins.ToString();
+
+        UIInGameManager.Instance.UpdateTextCoins(coins.ToString());
+    }
 }
