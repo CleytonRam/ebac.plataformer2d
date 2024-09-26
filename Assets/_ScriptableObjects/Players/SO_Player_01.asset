@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1babca5aae41774b932766a18161fb5, type: 3}
   m_Name: SO_Player_01
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 6413013834153556191, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
   soStringName: {fileID: 11400000, guid: 2fd71f5262f1693489c5b4b1dd3ca396, type: 2}
   friction: {x: -0.3, y: 0}
   speed: 21
