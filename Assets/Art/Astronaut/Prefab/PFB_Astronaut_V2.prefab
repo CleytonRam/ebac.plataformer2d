@@ -904,9 +904,9 @@ GameObject:
   - component: {fileID: 6413013834153556191}
   - component: {fileID: 4930423115650494529}
   - component: {fileID: 1266525274007535905}
-  - component: {fileID: -5899632433129619456}
+  - component: {fileID: 5166598574289373082}
   m_Layer: 0
-  m_Name: PFB_Astronaut
+  m_Name: PFB_Astronaut_V2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -921,7 +921,7 @@ Transform:
   m_GameObject: {fileID: 8835229685202505509}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -1.1642385, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -996,7 +996,7 @@ MonoBehaviour:
   - {fileID: 4989476794605110809}
   color: {r: 0.9245283, g: 0.53640085, b: 0.53640085, a: 1}
   duration: 0.1
---- !u!210 &-5899632433129619456
+--- !u!210 &5166598574289373082
 SortingGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
