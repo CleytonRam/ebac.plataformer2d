@@ -12,6 +12,6 @@ public class ItemCollecatbleCoin : ItemCollectableBase {
 
         
         base.OnCollect();
-        ItemManager.Instance.AddCoins();
+        ItemManager.Instance.AddCoins(_amount);
     }
 }

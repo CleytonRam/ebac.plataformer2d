@@ -10,6 +10,8 @@ public class ItemCollectableBase : MonoBehaviour {
     
     public string compareTag = "Player";
 
+    [SerializeField] protected int _amount = 1;
+
    
 
 
