@@ -12,6 +12,8 @@ public class ItemCollectableBase : MonoBehaviour {
 
     [SerializeField] protected int _amount = 1;
 
+    public ParticleSystem particleSystem;
+
    
 
 
@@ -34,6 +36,9 @@ public class ItemCollectableBase : MonoBehaviour {
     }
 
     protected virtual void OnCollect() {
+
+        if (particleSystem != null) { particleSystem.Play(); 
+        }
     
         
     }
