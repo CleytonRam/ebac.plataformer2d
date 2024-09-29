@@ -18,14 +18,26 @@ public class Player : MonoBehaviour
     private bool _isRunning = false;
 
     private Animator _currentPlayer;
+
+    [Header("Jump Collision Check")]
+    public Collider2D collider2D;
+    public float disToGround;
+    public float spaceToGround;
+
     private void Awake()
     {
         if (healthBase != null) {
             healthBase.OnKill += OnPlayerKill;
         }
+        _currentPlayer = Instantiate(soPlayerSetup.player, transform);
 
-        
-          _currentPlayer = Instantiate(soPlayerSetup.player, transform);
+        if (collider2D != null) {
+            disToGround = collider2D.bounds.extents.y;
+        }
+    }
+
+    private bool IsGrounded() {
+        Debug.DrawRay(transform.position, -Vector2.up, Color.magenta, disToGround + spaceToGround);
     }
 
     private void OnPlayerKill() {
@@ -34,7 +46,8 @@ public class Player : MonoBehaviour
     }
 
     public void Update()  {
-
+     
+    IsGrounded();
     HandleJump(); 
     HandleMovement();
 
