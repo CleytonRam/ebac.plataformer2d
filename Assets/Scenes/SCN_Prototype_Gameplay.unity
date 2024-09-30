@@ -6728,6 +6728,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8350169805004093351, guid: 7dfc6ab934ef45546acfffee2efb2ff0, type: 3}
+      propertyPath: spaceToGround
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8802571672622694973, guid: 7dfc6ab934ef45546acfffee2efb2ff0, type: 3}
       propertyPath: m_IsActive
       value: 0
