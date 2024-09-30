@@ -5,8 +5,7 @@ using UnityEngine;
 using DG.Tweening;
 
 [CreateAssetMenu]
-public class SOPlayerSetup : ScriptableObject
-{
+public class SOPlayerSetup : ScriptableObject {
     public Animator player;
     public SOString soStringName;
 
@@ -25,7 +24,7 @@ public class SOPlayerSetup : ScriptableObject
 
     [Header("Animation player")]
     public string boolRun = "Run";
-    public string triggerDeath = "Death";   
+    public string triggerDeath = "Death";
     public float playerSwipeDuration = .1f;
 
 }

@@ -4,8 +4,7 @@ using UnityEngine;
 using Ebac.Core.Singleton;
 using DG.Tweening;
 
-public class GameManager : Singleton<GameManager>
-{
+public class GameManager : Singleton<GameManager> {
     [Header("Player")]
     public GameObject playerPrefab;
 
@@ -20,12 +19,12 @@ public class GameManager : Singleton<GameManager>
     public float delay = .05f;
     public Ease ease = Ease.OutBack;
 
-    
+
 
     private GameObject _currentplayer;
 
-    private void Start(){
-       
+    private void Start() {
+
         Init();
     }
 
@@ -34,8 +33,7 @@ public class GameManager : Singleton<GameManager>
         SpawnPlayer();
     }
 
-    public void SpawnPlayer()
-    {
+    public void SpawnPlayer() {
 
         _currentplayer = Instantiate(playerPrefab);
         _currentplayer.transform.position = startpoint.transform.position;
