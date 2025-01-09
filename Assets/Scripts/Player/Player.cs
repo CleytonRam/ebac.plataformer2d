@@ -8,6 +8,10 @@ public class Player : MonoBehaviour
     public Rigidbody2D myRigidbody;
     public HealthBase healthBase;
 
+    [Header("Sounds")]
+    public AudioSource audioSource;
+  
+
     [Header("Setup")]
     public SOPlayerSetup soPlayerSetup;
 
@@ -109,6 +113,11 @@ public class Player : MonoBehaviour
             myRigidbody.transform.localScale = Vector2.one;
 
             DOTween.Kill(myRigidbody.transform);
+
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
 
             HanldeScaleJump();
             PlayJumpVFX();

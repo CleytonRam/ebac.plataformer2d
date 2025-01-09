@@ -1,17 +1,30 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class HealthBase : MonoBehaviour {
 
     public Action OnKill;
     
+
+    
+    public float delayToShow = 0.8f;
+    public GameManager gameManager;
+
+    
+    
+    
+
+    
     public int startlife = 10;
 
     public bool destroyOnKill = false;
     public float delayToKill = 0f;
-
+    
 
     private int _currentLife;
     private bool _isDead = false;
@@ -37,9 +50,15 @@ public class HealthBase : MonoBehaviour {
 
         _currentLife -= damage;
 
-        if (_currentLife <= 0) {
+        if (_currentLife <= 0 && !_isDead) {
             Kill();
+            if (CompareTag("Player"))
+            {
+                gameManager.GameOver();
+            }
         }
+
+     
 
         if (flashColor != null) {
             flashColor.Flash();
@@ -52,9 +71,10 @@ public class HealthBase : MonoBehaviour {
 
         if (destroyOnKill) {
             Destroy(gameObject,delayToKill);
-        }
-        
+    
+        }   
        OnKill?.Invoke();
     }
+
     
 }

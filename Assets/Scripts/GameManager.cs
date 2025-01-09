@@ -19,6 +19,10 @@ public class GameManager : Singleton<GameManager> {
     public float delay = .05f;
     public Ease ease = Ease.OutBack;
 
+    [Header("EndGame")]
+    public GameObject uiEndGame;
+
+
 
 
     private GameObject _currentplayer;
@@ -38,6 +42,11 @@ public class GameManager : Singleton<GameManager> {
         _currentplayer = Instantiate(playerPrefab);
         _currentplayer.transform.position = startpoint.transform.position;
         _currentplayer.transform.DOScale(0, duration).SetEase(ease).From().SetDelay(delay);
+    }
+
+    public void GameOver()
+    {
+        uiEndGame.SetActive(true);
     }
 
 }

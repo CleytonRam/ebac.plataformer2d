@@ -138,6 +138,7 @@ MonoBehaviour:
   timeToHide: 3
   gaphicItem: {fileID: 4366960999678034501}
   audioSource: {fileID: 5612104044572358358}
+  collider: {fileID: 2722353437118297953}
 --- !u!58 &2722353437118297953
 CircleCollider2D:
   m_ObjectHideFlags: 0

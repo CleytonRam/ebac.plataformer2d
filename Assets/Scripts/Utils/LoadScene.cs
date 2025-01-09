@@ -15,4 +15,9 @@ public class LoadScene : MonoBehaviour
     {
         SceneManager.LoadScene(s);
     }
+
+    public void UnPause()
+    {
+        Time.timeScale = 1;
+    }
 }
